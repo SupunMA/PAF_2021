@@ -26,12 +26,18 @@
     <url-pattern>/OrderService/*</url-pattern>
   </servlet-mapping>
   
-  <!-- Add your servlet Here -->
+  <!-- Payment Management servlet  -->
+  <servlet>
+  <servlet-name>PaymentManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>PaymentManagement</servlet-name>
+    <url-pattern>/PaymentService/*</url-pattern>
+  </servlet-mapping>
   
-  <!-- den oya karagena yann
-  a oyage service eka methanata uda dalathiyena widihata copy pasate   karrala dnnaaa 
-  
-  mn den meka push karanawa github ekta-->
   
   
   
