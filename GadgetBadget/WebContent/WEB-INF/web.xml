@@ -26,7 +26,18 @@
     <url-pattern>/OrderService/*</url-pattern>
   </servlet-mapping>
   
-  <!-- Add your servlet Here -->
+  
+  <!-- Project Management servlet  -->
+   <servlet>
+  <servlet-name>ProjectManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ProjectManagement</servlet-name>
+    <url-pattern>/ProjectService/*</url-pattern>
+  </servlet-mapping>
   
   
   
