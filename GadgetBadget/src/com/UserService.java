@@ -27,7 +27,7 @@ public class UserService {
 	@GET
 	@Path("/")
 	@Produces(MediaType.TEXT_HTML)
-	public String readOrder() {
+	public String readUsers() {
 		return userOBJ.readUsers();
 	}
 
