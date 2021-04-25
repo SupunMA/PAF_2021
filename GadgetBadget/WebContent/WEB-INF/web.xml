@@ -28,7 +28,16 @@
   
   <!-- Add your servlet Here -->
   
-  
+  <servlet>
+    <servlet-name>ProductManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProductManagement</servlet-name>
+    <url-pattern>/ProductService/*</url-pattern>
+  </servlet-mapping>
   
   
   
