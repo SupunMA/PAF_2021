@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Supun\Desktop\Supun\PAF_2021\GadgetBadget\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1590252380.index
-2011172093.index
-1813420545.index
-2779833615.index
-967470636.index
-2250130128.index
-498045773.index
