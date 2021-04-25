@@ -96,7 +96,7 @@ public class Payment {
 			con.close();
 			output = "Inserted successfully";
 		} catch (Exception e) {
-			output = "Error while inserting";
+			output = "Error while inserting the payment.";
 			System.err.println(e.getMessage());
 		}
 		return output;

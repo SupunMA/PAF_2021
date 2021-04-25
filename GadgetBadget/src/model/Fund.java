@@ -13,7 +13,7 @@ public class Fund {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fund?useTimezone=true&serverTimezone=UTC", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/payment?useTimezone=true&serverTimezone=UTC", "root", "");
 			// For testing
 			System.out.print("Successfully connected");
 		} catch (Exception e) {
@@ -82,8 +82,7 @@ public class Fund {
 				return "Error while connecting to the database";
 			}
 			// create a prepared statement
-			String query = " insert into fundmanage(`fundID`,`fundProvider`,`researchName`,`amount`)"
-					+ " values (?, ?, ?, ?, ?, ?)";
+			String query = " insert into fundmanage(`fundID`,`fundProvider`,`researchName`,`amount`) values (?, ?, ?, ?)";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			// binding values
 			preparedStmt.setInt(1, 0);
@@ -95,9 +94,9 @@ public class Fund {
 			// execute the statement
 			preparedStmt.execute();
 			con.close();
-			output = "Inserted successfully";
-		} catch (Exception e) {
 			output = "Error while inserting";
+		} catch (Exception e) {
+			output = "Error while inserting the fund.";
 			System.err.println(e.getMessage());
 		}
 		return output;
