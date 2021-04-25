@@ -14,6 +14,17 @@
     <url-pattern>/UserService/*</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>UserRoleManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>UserRoleManagement</servlet-name>
+    <url-pattern>/UserService/Role/*</url-pattern>
+  </servlet-mapping>
+  
   <!-- Order Management Servlet -->
     <servlet>
   <servlet-name>OrderManagement</servlet-name>
@@ -26,8 +37,19 @@
     <url-pattern>/OrderService/*</url-pattern>
   </servlet-mapping>
   
-  <!-- Add your servlet Here -->
+  <!-- Payment Management servlet  -->
+  <servlet>
+  <servlet-name>PaymentManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>PaymentManagement</servlet-name>
+    <url-pattern>/PaymentService/*</url-pattern>
+  </servlet-mapping>
   
+
   <servlet>
     <servlet-name>ProductManagement</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer </servlet-class>
@@ -38,6 +60,20 @@
     <servlet-name>ProductManagement</servlet-name>
     <url-pattern>/ProductService/*</url-pattern>
   </servlet-mapping>
+
+  <!-- Fund Management servlet  -->
+  <servlet>
+  <servlet-name>FundManagement</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>FundManagement</servlet-name>
+    <url-pattern>/FundService/*</url-pattern>
+  </servlet-mapping>
+  
+
   
   
   
