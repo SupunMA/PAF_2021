@@ -14,12 +14,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.parser.Parser;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+//import com.google.gson.JsonObject;
+//import com.google.gson.JsonParser;
+import com.google.gson.*;
 
 import model.Project;
 
-@Path("/Project")
+@Path("/Projects")
 public class ProjectService {
 
 	Project projectObj = new Project();
@@ -36,10 +37,10 @@ public class ProjectService {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String insertProject(@FormParam("projectID") String projectID, @FormParam("projectTitle") String projectTitle,
-			@FormParam("projectSummary") String projectSummary, @FormParam("projectProposal") String projectProposal,
-			@FormParam("projectVideo") String projectVideo) {
+			@FormParam("projectDescription") String projectDescription, @FormParam("projectProposalLink") String projectProposalLink,
+			@FormParam("projectVideoLink") String projectVideoLink) {
 
-		String output = projectObj.insertProject(projectTitle, projectSummary, projectProposal, projectVideo);
+		String output = projectObj.insertProject(projectTitle, projectDescription, projectProposalLink, projectVideoLink);
 		return output;
 	}
 
@@ -47,21 +48,21 @@ public class ProjectService {
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String updateProject(String ProjectData) {
+	public String updateProject(String projectData) {
 
 		// Convert the input string to a JSON object
 
-		JsonObject projectObject = new JsonParser().parse(ProjectData).getAsJsonObject();
+		JsonObject projectObject = new JsonParser().parse(projectData).getAsJsonObject();
 
 		// Read the values from the JSON object
 
-		String ProjectID = projectObject.get("ProjectID").getAsString();
+		String projectID = projectObject.get("projectID").getAsString();
 		String projectTitle = projectObject.get("projectTitle").getAsString();
-		String projectSummary = projectObject.get("projectSummary").getAsString();
-		String projectProposal = projectObject.get("projectProposal").getAsString();
-		String projectVideo = projectObject.get("projectVideo").getAsString();
+		String projectDescription = projectObject.get("projectDescription").getAsString();
+		String projectProposalLink = projectObject.get("projectProposalLink").getAsString();
+		String projectVideoLink = projectObject.get("projectVideoLink").getAsString();
 
-		String output = projectObj.updateProject(ProjectID, projectTitle, projectSummary, projectProposal, projectVideo);
+		String output = projectObj.updateProject(projectID, projectTitle, projectDescription, projectProposalLink, projectVideoLink);
 
 		return output;
 	}
@@ -74,7 +75,7 @@ public class ProjectService {
 		// Convert the input string to an XML document
 		Document doc = Jsoup.parse(projectData, "", Parser.xmlParser());
 		// Read the value from the element <projectID>
-		String projectID = doc.select("ProjectID").text();
+		String projectID = doc.select("projectID").text();
 		String output = projectObj.deleteProject(projectID);
 		return output;
 	}

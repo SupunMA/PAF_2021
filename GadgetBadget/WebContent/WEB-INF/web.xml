@@ -3,7 +3,7 @@
   <display-name>GadgetBadget</display-name>
   
   <!-- User Management Servlet -->
-  <servlet>
+    <servlet>
   <servlet-name>UserManagement</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <load-on-startup>1</load-on-startup>
@@ -12,7 +12,7 @@
   <servlet-mapping>
     <servlet-name>UserManagement</servlet-name>
     <url-pattern>/UserService/*</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> 
   
   <!-- Order Management Servlet -->
     <servlet>
